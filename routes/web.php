@@ -14,3 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/leaphea',function(){
+// 	return "Hello world!!!";
+// });
+// Route::get('/leaphea/{id}','Test\TestController@routeTesting');
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/user','testController@index');
+
+Route::get('master', function(){
+	return view('layouts.master');
+});
+
+Route::get('restaurant', function(){
+	return view('layouts.rest_register');
+});
+
+Route::get('member', function(){
+	return view('layouts.user_register');
+});
+
+
