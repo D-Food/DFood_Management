@@ -26,12 +26,21 @@ Route::get('master', function(){
 	return view('layouts.master');
 });
 
-Route::get('restaurant', function(){
-	return view('layouts.rest_register');
+// Route::get('restaurant', function(){
+// 	return view('restaurant.create');
+// });
+
+Route::resource('restaurants', 'RestaurantController');
+Route::resource('foods', 'FoodController');
+Route::resource('drinks', 'DrinkController');
+
+Route::get('member', function(){
+	return view('layouts.user_register');
 });
 
 Route::get('member', function(){
 	return view('layouts.user_register');
 });
+// Route::resource('restaurants','restaurantController');
 
 

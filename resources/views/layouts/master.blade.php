@@ -9,16 +9,26 @@
 </head>
 <body>
 @section('Header')
+  <!-- <ul class="nav justify-content-end navbar navbar-light" style="background-color: #;"> -->
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+    <br><img src="{{url('/img/logo/logo.png')}}" width="100" height="100">
+    </a>
+
+  <nav class="navbar justify-content-center">
+    <img src="{{url('/img/logo/all_day.png')}}" width="300" height="130">
+  </nav>
+
   <ul class="nav justify-content-end navbar navbar-light" style="background-color: #;">
   	<li class="nav-item active">
-          <a class="nav-link" href="#">Logins</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
-        </li>
-      </ul>
+      <br><a class="nav-link" href="#"><br><u><h4><br>Login</h4></u></a>
+    </li>
+    <li class="nav-item">
+      <br><a class="nav-link" href="#"><br><u><h4><br>Register</h4></u></a>
+    </li>
   </ul>
-
+</nav>
+  
 	<nav class="navbar navbar-expand-lg navbar-light bg-warning" >
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
     	<ul class="navbar-nav mr-auto">
