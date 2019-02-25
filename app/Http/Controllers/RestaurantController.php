@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Restaurant;
+use Image;
 
 class RestaurantController extends Controller
 {
@@ -43,18 +44,27 @@ class RestaurantController extends Controller
             'email'=>'required',
             'phone_number'=>'required',
             'address'=>'required',
-            'password'=>'required'
+            'password'=>'required',
+            'photo'=>'required',
         ]);
-        $restaurant = new Restaurant([
-            'rest_name'=> $request->get('rest_name'),
-            'service'=> $request->get('service'),
-            'email'=> $request->get('email'),
-            'phone_number'=> $request->get('phone_number'),
-            'address'=> $request->get('address'),
-            'password'=> $request->get('password')
-        ]);
+        $restaurant = new Restaurant();
+            $restaurant->rest_name= $request->get('rest_name');
+            $restaurant->service= $request->get('service');
+            $restaurant->email= $request->get('email');
+            $restaurant->phone_number= $request->get('phone_number');
+            $restaurant->address= $request->get('address');
+            $restaurant->password= $request->get('password');
+
+            if($request->hasFile('photo')){
+            $restaurant_img=$request->file('photo');
+            $fileName='/img/restaurant_img/'.time().'.'.$restaurant_img->getClientOriginalExtension();
+            Image::make($restaurant_img)->resize(150,150)->save(public_path($fileName));
+            $restaurant->photo=$fileName;
+            }
+        
         $restaurant->save();
-        return redirect('/restaurant')->with('success','Restaurant has been added');
+        return redirect('/restaurants')->with('success','Restaurant has been added');
+       
     }
 
     /**
@@ -96,7 +106,8 @@ class RestaurantController extends Controller
         'email'=>'required',
         'phone_number'=>'required',
         'address'=>'required',
-        'password'=>'required'
+        'password'=>'required',
+        'photo'=>'required',
       ]);
 
         $restaurant = Restaurant::find($id);
@@ -106,12 +117,17 @@ class RestaurantController extends Controller
         $restaurant ->phone_number= $request->get('phone_number');
         $restaurant ->address=$request->get('address');
         $restaurant ->password=$request->get('password');
-        
-       $restaurant ->save();
 
-      return redirect('/restaurants')->with('success', 'Restauranthas been updated');
+        if($request->hasFile('photo')){
+            $restaurant_img=$request->file('photo');
+            $fileName='/img/restaurant_img/'.time().'.'.$restaurant_img->getClientOriginalExtension();
+            Image::make($restaurant_img)->resize(150,150)->save(public_path($fileName));
+            $restaurant->photo=$fileName;
+        }
+        $restaurant ->save();
+        return redirect('/restaurants')->with('success', 'Restauranthas been updated');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *

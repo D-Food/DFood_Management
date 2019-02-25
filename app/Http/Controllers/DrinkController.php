@@ -96,7 +96,7 @@ class DrinkController extends Controller
         $request->validate([
         'drink_name'=>'required',
         'price'=>'required',
-        'photo'=>'required',
+        'photo'=>'',
         ]);
 
         $drink = Drink::find($id);

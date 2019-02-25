@@ -21,8 +21,9 @@ class CreateRestaurantsTable extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->string('address');
+            $table->string('photo');
             $table->string('password');
-    });
+        });
     }
 
     /**

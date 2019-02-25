@@ -17,7 +17,7 @@
   @endif
   <div class="container">
       <h2 align="center">Restaurant Infomation</h2><br>
-      <div class="jumbotron">
+      <!-- <div class="jumbotron"> -->
   <table class="table table-striped">
     <thead>
         <tr>
@@ -28,6 +28,7 @@
           <td>Phone number</td>
           <td>Address</td>
           <td>Password</td>
+          <td>Photo</td>
           
           <td colspan="2">Action</td>
         </tr>
@@ -42,6 +43,7 @@
             <td>{{$restaurant->phone_number}}</td>
             <td>{{$restaurant->address}}</td>
             <td>{{$restaurant->password}}</td>
+            <td><img width="100px" height="100px" src="{{asset($restaurant['photo'])}}"></td>
             
             <td><a href="{{ route('restaurants.edit',$restaurant->id)}}" class="btn btn-primary">Edit</a></td>
             <td>

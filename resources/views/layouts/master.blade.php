@@ -14,10 +14,12 @@
     <a class="navbar-brand" href="#">
     <br><img src="{{url('/img/logo/logo.png')}}" width="100" height="100">
     </a>
+ 
 
   <nav class="navbar justify-content-center">
     <img src="{{url('/img/logo/all_day.png')}}" width="300" height="130">
   </nav>
+
 
   <ul class="nav justify-content-end navbar navbar-light" style="background-color: #;">
   	<li class="nav-item active">
@@ -49,7 +51,8 @@
  			</form>
  		</div>
 	</nav>
-<br><br>
+  
+
 
 
 @section('content')

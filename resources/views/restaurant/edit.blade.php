@@ -23,7 +23,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('restaurants.update', $restaurant->id) }}">
+      <form method="post" action="{{ route('restaurants.update', $restaurant->id) }}" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="form-group">
@@ -46,10 +46,21 @@
           <label for="quantity">Address:</label>
           <input type="text" class="form-control" name="address" value={{ $restaurant->address}} />
         </div>
+
+        
+
         <div class="form-group">
           <label for="quantity">Password:</label>
           <input type="text" class="form-control" name="password" value={{ $restaurant->password}} />
-        </div>         
+        </div>
+
+        <div class="form-group">
+          <label for="choose" class="col-sm-2 col-form-label" >Photo:</label>
+          <div class="col-sm-10">
+            <input type="file" name="photo" value={{ $restaurant->photo }} />
+          </div>
+        </div>
+
         <button type="submit" class="btn btn-primary">Update</button>
       </form>
   </div>

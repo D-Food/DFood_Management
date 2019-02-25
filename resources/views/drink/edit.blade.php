@@ -38,7 +38,7 @@
         <div class="form-group">
           <label for="choose" class="col-sm-2 col-form-label" >Photo:</label>
             <div class="col-sm-10">
-            <input type="file" name="photo" id="choose" required value={{ $drink->photo }}></div>
+            <input type="file" name="photo" id="choose" value={{ $drink->photo }}></div>
           <br>
         
         <button type="submit" class="btn btn-primary">Update</button>

@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 // Route::get('/leaphea',function(){
 // 	return "Hello world!!!";
 // });
@@ -26,6 +26,16 @@ Route::get('master', function(){
 	return view('layouts.master');
 });
 
+Route::get('/', 'HomeController@index');
+
+// Route::get('home', function(){
+// 	return view('home');
+// });
+
+// Route::get('welcome', function(){
+// 	return view('welcome');
+// });
+
 // Route::get('restaurant', function(){
 // 	return view('restaurant.create');
 // });
@@ -34,6 +44,7 @@ Route::resource('restaurants', 'RestaurantController');
 Route::resource('foods', 'FoodController');
 Route::resource('drinks', 'DrinkController');
 
+
 Route::get('member', function(){
 	return view('layouts.user_register');
 });
@@ -41,6 +52,7 @@ Route::get('member', function(){
 Route::get('member', function(){
 	return view('layouts.user_register');
 });
+
 // Route::resource('restaurants','restaurantController');
 
 
