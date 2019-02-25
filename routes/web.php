@@ -53,6 +53,30 @@ Route::get('member', function(){
 	return view('layouts.user_register');
 });
 
+<<<<<<< HEAD
 // Route::resource('restaurants','restaurantController');
 
 
+=======
+Route::resource('order', 'OrderController');
+
+Route::resource('recipes', 'RecipeController');
+
+
+Route::get('master', function () {
+    return view('layouts.master');
+});
+
+Route::get('recipeHome', function () {
+    return view('recipes.recipeHome');
+});
+
+Route::get('recipe', function () {
+    return view('layouts.recipe');
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d

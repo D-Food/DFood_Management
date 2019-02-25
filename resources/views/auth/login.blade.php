@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 @extends('layouts.app')
+=======
+@extends('layouts.master')
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+<<<<<<< HEAD
         <div class="col-md-8">
+=======
+        <div class="col-md-9">
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -51,9 +59,15 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
+=======
+                        
+                            <div class="col-md-6 offset-md-1">
+                                <button type="submit" class="btn btn-warning">
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
                                     {{ __('Login') }}
                                 </button>
 
@@ -62,7 +76,22 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+<<<<<<< HEAD
                             </div>
+=======
+
+                                <button type="submit" class="btn btn-warning">
+                                    {{ __('Register') }}
+                                </button>
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __('no account yet?') }}
+                                </a>
+                              
+                                
+
+
+                          
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
                         </div>
                     </form>
                 </div>
@@ -70,4 +99,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+<br>
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
 @endsection

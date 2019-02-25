@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<title>@yield('title','Home Page')</title>
 	<link rel="stylesheet" type="text/css" href="{{url('css/app.css')}}">
 	<script type="text/javascript" src="{{url('js/app.js')}}"></script>
@@ -34,10 +35,35 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-warning" >
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
     	<ul class="navbar-nav mr-auto">
+=======
+  <title>@yield('title','Home Page')</title>
+  <link rel="stylesheet" type="text/css" href="{{url('css/app.css')}}">
+  <script type="text/javascript" src="{{url('js/app.js')}}"></script>
+  @section('css')
+
+ 
+  @show
+</head>
+<body>
+@section('Header')
+  <ul class="nav justify-content-end navbar navbar-light" style="background-color: #;">
+    <li class="nav-item active">
+          <a class="nav-link" href="#">Logins</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Register</a>
+        </li>
+      </ul>
+  </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
         <li class="nav-item">
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
           <a class="nav-link" href="#">Recipe</a>
         </li>
         <li class="nav-item">
@@ -54,6 +80,23 @@
   
 
 
+=======
+          <a class="nav-link" href="#">Healthy Diet</a>
+        </li>
+        <li class="nav-item">
+          <li class="nav-item">
+          <a class="nav-link" href="#">Recipe</a>
+        </li>
+        </li>
+      </ul>
+
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+       </form>
+     </div>
+  </nav>
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
 
 @section('content')
 @show
@@ -76,7 +119,11 @@
               <a href="https://www.facebook.com/"><img src="{{url('/img/social/fb.png')}}" width="30px"/></a>
               <a href="https://www.instagram.com/"><img src="{{url('/img/social/insta.png')}}" width="30px"/></a>
               <a href="https://www.youtube.com/"><img src="{{ url('/img/social/whatsapp.png')}}" width="30px"/></a>
+<<<<<<< HEAD
               <a href="https://www.youtube.com/"><img src="{{ url('/img/social/uTube.png')}}" width="30px"/></a>
+=======
+              <a href="https://www.youtube.com/"><img src="{{ url('/img/social/utube.png')}}" width="30px"/></a>
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
             </div>
           </div>
 
@@ -89,11 +136,20 @@
     </div>
   </div>
 </nav>
+<<<<<<< HEAD
 <footer class="page-footer bg-warning">
+=======
+<footer class="page-footer bg-warning" ">
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
   <div class="text-center">© 2019 Copyright
     <!-- <a href="http://niptict.edu.kh/"> info@nham.com</a> -->
   </div>
 </footer>
 
+<<<<<<< HEAD
+=======
+@yield('js')
+
+>>>>>>> 70af7e244e68a61e88e2c15fa9cda150a86acb6d
 </body>
 </html>
