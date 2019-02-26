@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::resource('order', 'OrderController');
-
+Route::resource('recipeHome', 'RecipeHomeController');
+// Route::resource('show', 'RecipeHomeController');
 Route::resource('recipes', 'RecipeController');
 
 
@@ -24,13 +25,13 @@ Route::get('master', function () {
     return view('layouts.master');
 });
 
-Route::get('recipeHome', function () {
-    return view('recipes.recipeHome');
-});
+// Route::get('recipeHome', function () {
+//     return view('recipes.recipeHome');
+// });
 
-Route::get('recipe', function () {
-    return view('layouts.recipe');
-});
+// Route::get('recipe', function () {
+//     return view('layouts.recipe');
+// });
 
 
 Auth::routes();

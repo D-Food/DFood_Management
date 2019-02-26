@@ -75,6 +75,8 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
+        $recipe= Recipe::find($id);
+        return view('recipes.show', compact('recipe'));
         //
     }
 
@@ -100,6 +102,7 @@ class RecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->file());
         $request->validate([
         'title'=>'required',
         'duration'=>'required',
@@ -124,11 +127,13 @@ class RecipeController extends Controller
       //       Image::make($image)->resize(150,150)->save(public_path($fileName));
       //       $recipe->image=$fileName;
       //   }
+
         if($request->hasFile('image')){
             $image=$request->file('image');
             $fileName='/img/recipe/'.time().'.'.$image->getClientOriginalExtension();
             Image::make($image)->resize(150,150)->save(public_path($fileName));
             $recipe->image=$fileName;
+            // dd($request->all());
         }
      
       $recipe->save();

@@ -11,24 +11,24 @@
   }
 </style>
 <div class="container col-md-8">
-<div class="card uper">
-  <div class="card-header">
-    <h2><b>Edit Recipe</b></h2>
-  </div>
-  <div class="card-body">
-    @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-      </div>
-      <br/>
-    @endif
-      <form method="post" action="{{ route('recipes.update', $recipe->id) }} enctype="multipart/form-data">
-        @method('PATCH')
-        @csrf
+  <div class="card uper">
+    <div class="card-header">
+      <h2><b>Edit Recipe</b></h2>
+    </div>
+    <div class="card-body">
+      @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+        </div>
+        <br/>
+      @endif
+        <form method="POST"  action="{{ route('recipes.update', $recipe->id) }}" enctype="multipart/form-data">
+          @method('PUT')
+          @csrf
           <div class="form-group">
             <label for="title">Title:</label>
             <input type="text" class="form-control" name="title" value={{ $recipe->title }} />
@@ -57,23 +57,24 @@
           </div>
 
           <div class="form-group">
-          <label for="choose" class="col-sm-2 col-form-label" >Image:</label>
-          <div class="col-sm-10">
-            <input type="file" name="image" value={{ $recipe->image }} />
+            <label for="choose" class="col-sm-2 col-form-label" >Image:</label>
+            <div class="col-sm-10">
+              <input type="file" name="image" accept="image/*" value={{ $recipe->image }} />
+            </div>
           </div>
-        </div>
           <button type="submit" class="btn btn-warning">Update</button>
-          <button  href="#" type="button" class="btn btn-dark">Cancel</button>
-      </form>
+        </form>
+    </div>
   </div>
-</div>
 </div>
 <br>
 @endsection
 @section('js')
+
   <script src="//cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
   <script type="text/javascript">
     CKEDITOR.replace('description');
+
   </script>
 
   <script src="//cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>

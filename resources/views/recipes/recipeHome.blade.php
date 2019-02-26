@@ -34,8 +34,32 @@
           </div>   
           <h1> <b>Recipes</b> </h1>
           <hr>
-          
+          <div class="container">
+               <div class="row">
 
+               @foreach($recipe as $recipe)
+            <!-- <div class="col-md-3 img-portfolio">
+                <a href="portfolio-item.html">
+                    <img class="card-img-top" src="{{asset($recipe['image'])}}" alt="Card image cap" width="10%" height="60%">
+                    @csrf
+                </a>
+            </div> -->
+                    <div class="recipe col-sm-4">
+                         <div class="image">
+                              <a href="{{ route('recipes.show',['id'=>$recipe->id]) }}">
+                              <img class="card-img-top" src="{{asset($recipe['image'])}}" >
+                              </a>
+                         </div> 
+                         <div class="meta">
+                              <p class="title"><h4><b>{{$recipe->title}}</b></h4></p>
+                              <p class="description"><h5>{!!str_limit($recipe->description,62)!!}</h5></p>
+                              <hr>
+                         </div>
+                    </div>
+               @endforeach
+               </div>
+          </div>
+     </div>
 @endsection
 @section('Footer')
 @show

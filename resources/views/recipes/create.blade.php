@@ -52,9 +52,11 @@
 
 @endsection
 @section('js')
+
   <script src="//cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
   <script type="text/javascript">
     CKEDITOR.replace('description');
+
   </script>
 
   <script src="//cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
