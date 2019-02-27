@@ -14,10 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('drinks','DrinkController');
-Route::resource('foods','FoodController');
-Route::resource('healthy_diets','Healthy_dietController');
+// Route::resource('drinks','DrinkController');
+// Route::resource('foods','FoodController');
+// Route::resource('healthy_diets','Healthy_dietController');
 Route::resource('healthies','HealthyController');
+Route::resource('homehealthy','HomeHealthyController');
+Route::resource('show','HealthyController');
 //Route::resource('foods','FoodController');
 
 // Route::resource('/bank','TestController');

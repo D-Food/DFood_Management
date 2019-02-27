@@ -30,6 +30,7 @@
             <td>{{$healthy->title}}</td>
             <td>{{$healthy->description}}</td>
             <td><img width="100px" height="100px" src="{{asset($healthy['image'])}}"></td>
+            <td><a href="{{ route('healthies.show',['id'=>$healthy->id]) }}"></td>
             
             <td><a href="{{ route('healthies.edit',$healthy->id)}}" class="btn btn-primary">Edit</a></td>
             <td>

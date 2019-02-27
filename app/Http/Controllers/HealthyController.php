@@ -17,7 +17,7 @@ class HealthyController extends Controller
     public function index()
     {
         //$healthies = Healthy::all();
-        $healthies = Healthy::paginate(2);
+        $healthies = Healthy::paginate(3);
 
         return view('healthies.index', compact('healthies'));
     }
@@ -73,7 +73,7 @@ class HealthyController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -101,7 +101,7 @@ class HealthyController extends Controller
         $request->validate([
         'title'=>'required',
         'description'=> 'required',
-        'image'=> 'required',
+        'image'=> '',
         
       ]);
 
